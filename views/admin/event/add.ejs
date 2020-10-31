@@ -1,0 +1,69 @@
+<link
+href="/assets/css/nepali.datepicker.v3.2.min.css"
+rel="stylesheet"
+type="text/css"
+/>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800"><%= heading %></h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-lg-8 mx-auto mb-4 ">
+            <%- include('../../partials/messages'); %>
+            <div class="form-group">
+                <div class="">
+                    <div class="card-block">
+                        <center class="m-t-30"> 
+                            <img src="/assets/image/" id="display_selected_image" style="width: 100%; display: none" />
+                            <!-- <h4 class="card-title m-t-10">Selected Image</h4> -->
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label >Select Image</label>
+                <label for="selected_image" class="form-control btn btn-info">Select Image</label>
+                <input type="file" placeholder="Select Image"
+                    id="selected_image" hidden/>
+            </div>
+
+            <form method="POST" action="/admin/event/add">
+                <div class="form-group">
+                    <label for="title">Event Title / Heading</label>
+                    <input type="text" class="form-control" name="title">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="image" id="imageToUpload" hidden/>
+                </div>
+                <div class="form-group">
+                    <label for="date">Event Date</label>
+                    <input type="text" class="form-control" name="date" id="nepali-datepicker">
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Description</label>
+                    <textarea class="form-control" id="eventDescription" name="description" rows="4"></textarea>
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+   
+    </div>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+<script>
+      window.onload = function () {
+    var mainInput = document.getElementById("nepali-datepicker");
+    mainInput.nepaliDatePicker();
+  };
+
+    $("#nav-event").addClass("active");
+  </script>
+  <script src="/assets/js/nepali.datepicker.v3.2.min.js"></script>
+  

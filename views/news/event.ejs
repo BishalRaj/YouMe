@@ -1,0 +1,77 @@
+<section class="events-head">
+  <div class="container m-0 p-0">
+    <div class="row title-head">
+      <div class="col-lg-10 align-self-end">
+        <h1 class="header-font shadow-lg w-75 p-5 title-head">
+          Events
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if(data==""){ %>
+<div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center bg-contact">
+  <h5 class="text-muted p-5">
+    No Events to show!
+  </h5>
+</div>
+<% } var counter=1; data.forEach((d)=>{ if(counter%2==1){ %>
+
+<section class="container my-4 bg-contact">
+  <div
+    class="row d-flex justify-content-end align-items-center p-5 bg-light shadow-lg rounded sm-p-5"
+  >
+    <div class="col-lg-3">
+      <img
+        src="/assets/image/o_<%= d.image %>"
+        class="img-fluid rounded"
+        alt=""
+      />
+    </div>
+    <div
+      class="px-5 my-auto <% if(!d.image){ %> col-lg-12<% } if(d.image){ %> col-lg-9<% } %>"
+    >
+      <h2 class="default-color-red border-bottom border-danger pb-2">
+        <strong><%= d.title %></strong>
+      </h2>
+      <small>Event on: <%= d.date %></small>
+
+      <p class="text-secondary">
+        <%= d.description %>
+      </p>
+    </div>
+  </div>
+</section>
+<% } if(counter%2==0){ %>
+<section class="container my-4">
+  <div
+    class="row d-flex justify-content-end align-items-center p-5 bg-dark shadow-lg rounded sm-p-5"
+  >
+    <div
+      class="px-5 my-auto <% if(!d.image){ %> col-lg-12<% } if(d.image){ %> col-lg-9<% } %>"
+    >
+      <h2 class="text-light border-bottom border-danger pb-2">
+        <strong><%= d.title %></strong>
+      </h2>
+      <small class="text-light">Event on: <%= d.date %></small>
+
+      <p class="text-light">
+        <%= d.description %>
+      </p>
+    </div>
+
+    <div class="col-lg-3">
+      <img
+        src="/assets/image/o_<%= d.image %>"
+        class="img-fluid rounded"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
+<% } %> <% counter++; %> <% }); %>
+
+<script>
+  $("#nav-news").addClass("active");
+</script>

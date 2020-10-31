@@ -1,0 +1,99 @@
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                <%= heading %>
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Nationality</th>
+                            <th>Age</th>
+                            <th>DOB(BS)</th>
+                            <th>DOB(AD)</th>
+                            <th>Grade</th>
+                            <th>House Number</th>
+                            <th>Area</th>
+                            <th>Ward</th>
+                            <th>VDC</th>
+                            <th>District</th>
+                            <th>Guardian Name</th>
+                            <th>Relation</th>
+                            <th>Phone no.</th>
+                            <th>Email</th>
+                            <th>Applied On</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Nationality</th>
+                            <th>Age</th>
+                            <th>DOB(BS)</th>
+                            <th>DOB(AD)</th>
+                            <th>Grade</th>
+                            <th>House Number</th>
+                            <th>Area</th>
+                            <th>Ward</th>
+                            <th>VDC</th>
+                            <th>District</th>
+                            <th>Guardian Name</th>
+                            <th>Relation</th>
+                            <th>Phone no.</th>
+                            <th>Email</th>
+                            <th>Applied On</th>
+
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <% var counter=1; %>
+                            <% data.forEach(function(m){ %>
+                            <tr>
+                                <td><%= counter %></td>
+                                <td><%= m.name %></td>
+                                <td><%= m.gender %></td>
+                                <td><%= m.nationality %></td>
+                                <td><%= m.age %></td>
+                                <td><%= m.dobBS %></td>
+                                <td><%= m.dobAD %></td>
+                                <td><%= m.grade %></td>
+                                <td><%= m.houseNo %></td>
+                                <td><%= m.area %></td>
+                                <td><%= m.ward %></td>
+                                <td><%= m.vdc %></td>
+                                <td><%= m.district %></td>
+                                <td><%= m.guardianName %></td>
+                                <td><%= m.relation %></td>
+                                <td><%= m.phone %></td>
+                                <td><%= m.email %></td>
+                                <td><%= m.appliedOn %></td>
+                            </tr>
+                            <% counter++; %>
+                          <%  }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+<script>
+    $("#nav-activities").addClass("active");
+  </script>
+  

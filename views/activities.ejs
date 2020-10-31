@@ -1,0 +1,71 @@
+<section class="activities-head">
+  <div class="container m-0 p-0">
+    <div class="row title-head">
+      <div class="col-lg-10 align-self-end title-head">
+        <h1 class="header-font shadow-lg w-75 p-5">
+          Activities
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-contact">
+  <% if(data==""){ %>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center p-5">
+    <h5 class="text-muted p-p5">
+      No Activities to show!
+    </h5>
+  </div>
+  <% } %> <% if(data!=""){ %>
+  <div class="container rounded p-3">
+    <p>
+      As a part of our effort to inculcate in students the importance of
+      co-curricular activities allow them to learn about new skills, time
+      management and improved self-confidence along with the teamwork spirit.
+      Throughout the year, almost every Friday each house presents different
+      programs showcasing their sheer talents and creative skills in the
+      meantime continues to entertain the school masses with their dynamic
+      energy and confidence. The activities involve singing, dancing, and
+      elocution, spelling bee competitions where all the respective houses
+      actively participate to put up magnificent and outstanding performances
+      each time. These types of events help to develop a team spirit, boosts
+      their confidence and learns a new set of skills that can be beneficial in
+      their personality development.
+    </p>
+  </div>
+
+  <div class="overflow-hidden container">
+    <div class="container-fluid mt-0 mb-4">
+      <div class="row right-to-left has-animation">
+        <% data.forEach((a)=>{ %>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12 my-2">
+          <div
+            class="row p-3 mx-auto"
+            style="
+              background: linear-gradient(
+                  to right,
+                  rgba(8, 19, 34, 0.8),
+                  rgba(47, 68, 90, 0.85)
+                ),
+                url('/assets/image/o_<%= a.image %>');
+              background-position: center;
+              background-repeat: no-repeat;
+              background-attachment: scroll;
+              background-size: cover;
+            "
+          >
+            <h3 class="text-center text-light w-100"><%= a.title %></h3>
+          </div>
+        </div>
+
+        <% }); %>
+      </div>
+    </div>
+  </div>
+
+  <% } %>
+</section>
+<script>
+  $("#nav-activities").addClass("active");
+</script>

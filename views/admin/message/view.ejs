@@ -1,0 +1,62 @@
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                <%= heading %>
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                            <th>Date & Time</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                            <th>Date & Time</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <% var counter=1; %>
+                            <% data.forEach(function(m){ %>
+                            <tr>
+                                <td><%= counter %></td>
+                                <td><%= m.name %></td>
+                                <td><%= m.email %></td>
+                                <td><%= m.subject %></td>
+                                <td><%= m.message %></td>
+                                <td><%= m.time %></td>
+                            </tr>
+                            <% counter++; %>
+                          <%  }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+<script>
+    $("#nav-activities").addClass("active");
+  </script>
+  

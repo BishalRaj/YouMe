@@ -1,0 +1,61 @@
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                <%= heading %>
+            </h6>
+
+        </div>
+        <div class="card-body">
+            <%- include('../../partials/messages'); %>
+
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <% var counter=1; %>
+                            <% data.forEach(function(d){ %>
+                            <tr>
+                                <td><%= counter %></td>
+                                <td><%= d.category %></td>
+                                <td>
+                                    <form action="/admin/categoryG/delete" method="POST">
+                                    <a href="/admin/gallery/add/<%= d._id %>" class="btn btn-success"><i class="fas fa-plus"></i></a>
+                                    <a href="/admin/categoryG/edit/<%= d._id %>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                        <button class="btn btn-danger" value="<%= d._id %>" name="c_id"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% counter++; %>
+                          <%  }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+<script>
+    $("#nav-gallery-categories").addClass("active");
+  </script>
+  

@@ -1,0 +1,86 @@
+<!-- Blog -->
+
+<section class="workhead page-section bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <% data.forEach((d)=>{ %>
+      <div class="col-lg-10 bg-light p-5">
+        <h1><%= d.title %></h1>
+        <small>Date: <%= d.addedOn %></small>
+        <!-- <h6>Date time</h6> -->
+
+        <div class="card-img" class="w-100">
+          <img src="/assets/image/<%= d.image %>" alt="" class="img-fluid" />
+        </div>
+
+        <p>
+          <%= d.description %>
+        </p>
+      </div>
+      <% }); %>
+      <div class="col-lg-1"></div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="details-card p-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card-content">
+          <div class="card-img">
+            <img src="assets/image/two.jpg" alt="" />
+            <span>
+              <h4>heading</h4>
+            </span>
+          </div>
+          <div class="card-desc">
+            <h3>Heading</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam
+            </p>
+            <a href="#" class="btn-card">Read</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-content">
+          <div class="card-img">
+            <img src="assets/image/two.jpg" alt="" />
+            <span>
+              <h4>heading2</h4>
+            </span>
+          </div>
+          <div class="card-desc">
+            <h3>Heading2</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam
+            </p>
+            <a href="#" class="btn-card">Read</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-content">
+          <div class="card-img">
+            <img src="assets/image/two.jpg" alt="" />
+            <span>
+              <h4>heading3</h4>
+            </span>
+          </div>
+          <div class="card-desc">
+            <h3>Heading3</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam
+            </p>
+            <a href="#" class="btn-card">Read</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->

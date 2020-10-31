@@ -1,0 +1,70 @@
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                <%= heading %>
+            </h6>
+        </div>
+        <div class="card-body">
+            <%- include('../../partials/messages'); %>
+
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Testimonial</th>
+                            <th>Grade</th>
+                            <th>Added On</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Testimonial</th>
+                            <th>Grade</th>
+                            <th>Added On</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <% var counter=1; %>
+                            <% data.forEach(function(d){ %>
+                            <tr>
+                                <td><%= counter %></td>
+                                <td><%= d.name %></td>
+                                <td><%= d.testimonial %></td>
+                                <td><%= d.grade %></td>
+                                <td><%= d.addedOn %></td>
+                                <td>
+                                    <form action="/admin/testimonial/delete" method="POST">
+                                    <a href="/admin/testimonial/edit/<%= d._id %>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                    <input type="text" name="image_name" value="<%= d.image %>" hidden/>
+                                        <button class="btn btn-danger" value="<%= d._id %>" name="id"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% counter++; %>
+                          <%  }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+<script>
+    $("#nav-testimonial").addClass("active");
+  </script>
+  

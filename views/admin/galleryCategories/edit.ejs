@@ -1,0 +1,30 @@
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800"><%= heading %></h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-lg-6 mb-4 ">
+            <%- include('../../partials/messages'); %>
+            <form method="POST" action="/admin/categoryG/update">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="category" value="<%= data.category %>">
+                    <input type="text" class="form-control" name="id" value="<%= data._id %>" hidden/>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+<script>
+    $("#nav-gallery-categories").addClass("active");
+  </script>
+  

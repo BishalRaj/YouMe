@@ -1,0 +1,373 @@
+<section class="admission-head">
+  <div class="container p-0 m-0">
+    <div class="row title-head">
+      <div class="col-lg-10 align-self-end title-head">
+        <h1 class="header-font shadow-lg w-75 p-5">
+          Admission Policies And Procedures
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-contact">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-3">
+        <!-- Tabs nav -->
+        <div
+          class="nav flex-column nav-pills nav-pills-custom"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <a
+            class="nav-link mb-3 p-3 shadow active"
+            id="v-pills-home-tab"
+            data-toggle="pill"
+            href="#v-pills-home"
+            role="tab"
+            aria-controls="v-pills-home"
+            aria-selected="true"
+          >
+            <i class="fa fa-gavel mr-2"></i>
+            <span class="font-weight-bold small text-uppercase"
+              >Policies and Regulations</span
+            ></a
+          >
+
+          <a
+            class="nav-link mb-3 p-3 shadow"
+            id="v-pills-form-tab"
+            data-toggle="pill"
+            href="#v-pills-form"
+            role="tab"
+            aria-controls="v-pills-form"
+            aria-selected="false"
+          >
+            <i class="far fa-file-alt mr-2"></i>
+            <span class="font-weight-bold small text-uppercase"
+              >Admission Form</span
+            ></a
+          >
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <!-- Tabs content -->
+        <div class="tab-content" id="v-pills-tabContent">
+          <div
+            class="tab-pane fade shadow rounded bg-white show active p-5"
+            id="v-pills-home"
+            role="tabpanel"
+            aria-labelledby="v-pills-home-tab"
+          >
+            <%- include('./partials/messages'); %>
+            <h4 class="font-italic mb-4">Policies and Regulations</h4>
+            <p class="text-muted my-2 text-justify">
+              Parents and guardians interested in regular admission for their
+              child are requested to contact the school office and find out
+              about the academic programs.
+            </p>
+          </div>
+
+          <div
+            class="tab-pane fade shadow rounded bg-white p-5 sm-p-0"
+            id="v-pills-form"
+            role="tabpanel"
+            aria-labelledby="v-pills-form-tab"
+          >
+            <div class="col-lg-12">
+              <form action="/admission" method="post">
+                <div class="row text-muted">
+                  <!-- GENERAL INFORMATION -->
+                  <div
+                    class="col-lg-12 col-md-12 col-sm-12 col-12 my-3 pt-2 border-bottom border-top default-color admission-border"
+                  >
+                    <%- include('./partials/messages'); %>
+                    <h6>
+                      <strong>GENERAL INFORMATION</strong>
+                    </h6>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="nameInput"><i>Name</i></label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nameInput"
+                        name="name"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+
+                  <!-- GENDER -->
+
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <label for="nameInput"><i>Gender</i></label
+                    ><br />
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        id="inlineradio1"
+                        value="m"
+                        name="gender"
+                      />
+                      <label class="form-check-label" for="inlineradio1"
+                        >Male</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        id="inlineradio2"
+                        value="f"
+                        name="gender"
+                      />
+                      <label class="form-check-label" for="inlineradio2"
+                        >Female</label
+                      >
+                    </div>
+                  </div>
+
+                  <!-- NATIONALITY -->
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="nationalityInput"><i>Nationality</i></label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nationalityInput"
+                        name="nationality"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+
+                  <!-- DATE OF BIRTH -->
+
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="dobInput"><i>Date of Birth (BS)</i></label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nepali-datepicker"
+                        name="dobBS"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="dobInput"><i>Date of Birth (AD)</i></label>
+                      <input
+                        type="text"
+                        data-date=""
+                        data-date-format="DD MMMM YYYY"
+                        class="form-control"
+                        id="datepicker"
+                        name="dobAD"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+
+                  <!-- GRADE -->
+
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="grade">Preferred Grade</label>
+                      <select class="form-control" id="grade" name="grade">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-lg-12 col-md-12 col-sm-12 col-12 pt-2 my-4 border-bottom border-top default-color admission-border"
+                  >
+                    <h6>
+                      <strong>PERMANENT ADDRESS</strong>
+                    </h6>
+                  </div>
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="houseNo">House number</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="houseNo"
+                        placeholder=""
+                        name="houseNo"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="area"><i>Area/Tole Village</i></label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder=""
+                        name="area"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="area"><i>Ward</i></label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder=""
+                        name="ward"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="area"><i>VDC / Municipality</i></label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder=""
+                        name="vdc"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="area"><i>District</i></label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder=""
+                        name="district"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- PARENT'S INFORMATION -->
+                  <div
+                    class="col-lg-12 col-md-12 col-sm-12 col-12 my-3 pt-2 border-top border-bottom default-color admission-border"
+                  >
+                    <h6><strong>GUARDIAN'S INFORMATION</strong></h6>
+                  </div>
+                  <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="guardiannameInput"
+                        ><i>Guardian's Name</i></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="guardiannameInput"
+                        placeholder=""
+                        name="guardianName"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="relation"><i>Relation</i></label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="relation"
+                        placeholder=""
+                        name="relation"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="area"><i>Phone no.</i></label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder=""
+                        name="phone"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="area"><i>Email</i></label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder=""
+                        name="email"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn btn-lg btn-primary btn-block mt-4"
+                >
+                  Apply
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  window.onload = function () {
+    var mainInput = document.getElementById("nepali-datepicker");
+    $("#nepali-datepicker").nepaliDatePicker({
+      onChange: function () {
+        $("#datepicker").val(
+          NepaliFunctions.ConvertDateFormat(
+            NepaliFunctions.BS2AD(
+              NepaliFunctions.ConvertToDateObject(
+                $("#nepali-datepicker").val(),
+                "YYYY-MM-DD"
+              )
+            ),
+            "YYYY-MM-DD"
+          )
+        );
+      },
+    });
+  };
+
+  $("#datepicker").change(function () {
+    $("#nepali-datepicker").val(
+      NepaliFunctions.ConvertDateFormat(
+        NepaliFunctions.AD2BS(
+          NepaliFunctions.ConvertToDateObject(
+            $("#datepicker").val(),
+            "YYYY-MM-DD"
+          )
+        ),
+        "YYYY-MM-DD"
+      )
+    );
+  });
+
+  $(function () {
+    $("#datepicker").datepicker({ dateFormat: "yy-mm-dd" });
+  });
+
+  $(function () {
+    $("#datepicker").datepicker();
+  });
+
+  $("#nav-admission").addClass("active");
+</script>

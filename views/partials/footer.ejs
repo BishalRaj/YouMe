@@ -1,0 +1,106 @@
+<footer
+  class="page-footer font-small pt-4 default-bg-color overflow-hidden"
+  id="footer"
+>
+  <div class="container text-center text-md-left">
+    <div class="row pb-2">
+      <div
+        class="col-lg-4 col-md-6 col-sm-6 col-4 text-md-left left-to-right has-animation"
+      >
+        <h5 class="text-uppercase ml-3">Social</h5>
+
+        <div class="col-lg-11 col-md-11 col-sm-11 py-2 ml-3">
+          <a href="https://www.facebook.com/YouMeNepal100/" class="text-light"
+            ><i class="fab fa-facebook-f mx-2"></i
+            ><span class="s-hidden">Facebook</span></a
+          >
+        </div>
+        <div class="col-lg-11 col-md-11 col-sm-11 py-2 ml-3">
+          <a href="https://twitter.com/youmenepal" class="text-light"
+            ><i class="fab fa-twitter mx-2"></i
+            ><span class="s-hidden">Twitter</span></a
+          >
+        </div>
+        <div class="col-lg-11 col-md-11 col-sm-11 py-2 ml-3">
+          <a href="https://www.instagram.com/youme_nepal/" class="text-light"
+            ><i class="fab fa-instagram mx-2"></i
+            ><span class="s-hidden">Instagram</span></a
+          >
+        </div>
+        <div class="col-lg-11 col-md-11 col-sm-11 py-2 ml-3">
+          <a
+            href="https://www.youtube.com/channel/UChChDWv8Je7WolDho3J2HIQ"
+            class="text-light"
+            ><i class="fab fa-youtube mx-2"></i
+            ><span class="s-hidden">Youtube</span></a
+          >
+        </div>
+      </div>
+      <div
+        class="col-lg-4 col-md-6 col-sm-6 col-8 border-left"
+        style="border-color: #005a97 !important;"
+      >
+        <h5 class="text-uppercase ml-3">Contact</h5>
+        <div class="container">
+          <div class="row p-2 text-light text-left">
+            <div class="col-lg-12 col-md-12 col-sm-12 pb-2">
+              <i class="fa fa-map-marker mr-2" aria-hidden="true"></i>
+              <b>YouMe School</b> <br />
+              <span class="ml-4">Biratnagar-19, Nepal</span><br />
+
+              <i class="fas fa-phone mt-3"></i>
+              <span class="mt-2">+977 9741428996</span> <br />
+              <span class="ml-4"> +977 9828921251</span>
+              <!-- <span class="ml-4 py-0">email: youmenepal@biratnagar.com</span><br /> -->
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
+              <a href="mailto:ymsbrt@gmail.com"
+                ><i class="fa fa-envelope mr-2" aria-hidden="true"></i
+                >ymsbrt@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-lg-4 border-left right-to-left has-animation"
+        style="border-color: #005a97 !important;"
+      >
+        <h5 class="text-uppercase sm-mt">Inquiry/Feedback</h5>
+        <%- include('../partials/messages'); %>
+        <form action="/inquiry" method="POST">
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter email"
+              id="i_email"
+              name="email"
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              rows="3"
+              placeholder="Your message"
+              id="i_message"
+              name="message"
+            ></textarea>
+          </div>
+          <button id="btn_inquiry" class="btn btn-primary w-100">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <img src="/assets/image/footer.png" class="img-fluid footer-image" alt="" />
+
+  <div class="footer-copyright text-center py-3 default-bg-color-red">
+    © 2020 YouMe School |
+    <a href="http://www.terakoyaacademia.com" class="text-light">
+      <b> Powered by Terakoya Academia</b></a
+    >
+    | All Rights Reserved
+  </div>
+</footer>

@@ -1,0 +1,61 @@
+<section class="gallery-head">
+  <div class="container p-0 m-0">
+    <div class="row title-head">
+      <div class="col-lg-10 align-self-end">
+        <h1 class="header-font w-75 p-5">
+          YouMe Gallery
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="overflow-hidden bg-contact">
+  <div class="container">
+    <div class="row p-5">
+      <div class="col-md-12 text-center">
+        <ul id="filter-list">
+          <li class="filter active" data-filter="all">ALL</li>
+          <% var count=1; %> <% category.forEach(function(c){ %>
+          <li class="filter" data-filter="<%= count %>"><%= c.category %></li>
+          <% count++; %> <% }); %>
+        </ul>
+      </div>
+      <div class="col-md-12 gallery-outer pb-5">
+        <ul class="gallery-items overflow-hidden">
+          <!-- Start -->
+
+          <% if(data==""){ %>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+            <h1 class="text-muted">
+              No Images to show !
+            </h1>
+          </div>
+          <% } %> <% var counter=1; %> <% category.forEach(function(c){ %> <%
+          data.forEach(function(d){ %> <% if(c.category===d.category.category){
+          %>
+          <li class="filtr-item fixed-img-div" data-category="<%= counter %>">
+            <div class="gallery-inner">
+              <a
+                href="/assets/image/<%= d.image %>"
+                data-lightbox="<%= counter %>"
+              >
+                <img
+                  src="/assets/image/o_<%= d.image %>"
+                  class="img-cover fixed-img"
+                  alt="<%= d.title %>"
+                />
+              </a>
+            </div>
+          </li>
+          <% } %> <% }); %> <% counter++; %> <% }); %>
+          <!-- End -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $("#nav-gallery").addClass("active");
+</script>
